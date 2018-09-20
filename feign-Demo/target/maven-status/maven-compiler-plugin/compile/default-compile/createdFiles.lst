@@ -1,0 +1,3 @@
+com\rogchen\www\FeignDemoApplication.class
+com\rogchen\www\feign\MsgInterfaceService.class
+com\rogchen\www\controller\FeignDemoController.class

@@ -11,6 +11,7 @@
 		<module>feign-Demo</module>
         <module>auth-Demo</module>
         <module>mybatis-Demo</module>
+        <module>wifi</module>
     </modules>
 	<packaging>pom</packaging>
 
@@ -43,6 +44,7 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+	<!-- 易联众私服地址 -->
 	<repositories>
 		<repository>
 			<id>public</id>
@@ -61,13 +63,20 @@
 			<url>https://oss.sonatype.org/content/groups/public</url>
 		</repository>
 	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>public</id>
+			<name>Public Repositories</name>
+			<url>http://10.102.2.14:8081/nexus/content/groups/public/</url>
+		</pluginRepository>
+	</pluginRepositories>
 	<!--依赖管理，用于管理spring-cloud的依赖，其中Camden.SR3是版本号-->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Dalston.SR1</version>
+				<version>Edgware.SR2</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

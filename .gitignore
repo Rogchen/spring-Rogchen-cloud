@@ -1,0 +1,7 @@
+
+*.xml
+*.svn-base
+.gitattributes
+target/classes/application.yml
+*.iml
+*.iml

@@ -1,0 +1,52 @@
+spring:
+    application:
+        name: ylzinfo-cloud-otherDemo-rogchen
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+        default-property-inclusion: non_null
+    cloud:
+        bus:
+          trace:
+            enabled: true # 开启跟踪总线事件
+    rabbitmq:
+        host: 192.168.44.56
+        port: 5672
+        username: hxb
+        password: hxb
+    zipkin: # 开启 zipkin
+      enabled: true
+    sleuth:
+          sampler:
+            percentage: 1
+
+server:
+    port: 18810
+
+
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: false
+
+
+eureka:
+    instance:
+        statusPageUrlPath: /info
+        healthCheckUrlPath: /health
+    client:
+        serviceUrl:
+            defaultZone: http://192.168.44.56:8080/eureka/
+# 配置用户认证和服务认证信息
+auth:
+  serviceId: ylzinfo-cloud-auth-rogchen
+  user:
+    token-header: YlzinfoCloudAuthorization
+  client:
+    id: ylzinfo-cloud-demo
+    secret: 123456
+    token-header: client-token
