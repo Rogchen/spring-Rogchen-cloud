@@ -1,5 +1,7 @@
 package com.rogchen.www.mybatis.service;
 
+import com.rogchen.www.mybatis.entity.CloudDemo;
+
 /**
  * @Description:
  * @Product: IntelliJ IDEA
@@ -7,4 +9,5 @@ package com.rogchen.www.mybatis.service;
  * @Created Date: 2018/3/20 15:28
  **/
 public interface MybatisDemoService {
+    CloudDemo get(int id);
 }

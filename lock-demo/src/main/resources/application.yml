@@ -1,0 +1,28 @@
+logging:
+    level:
+#       打印sql，需要将logging.level指向dao的位置
+       com.rogchen.lockDemo.service: debug
+
+spring:
+    application:
+        name: lock-rogchen
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+        default-property-inclusion: non_null
+    datasource:
+        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF8
+        username: root
+        password: root
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+server:
+    port: 8001
+
+# 配置数据库
+mybatis:
+    xml-location: classpath:mapper/**/*.xml
+    type-aliases-package: com.rogchen.lockDemo.entity
+    mapper-locations: com.rogchen.lockDemo.mapper.*
+#    configLocation: classpath:config/mybatis-config.xml

@@ -1,4 +1,5 @@
 import com.rogchen.www.mybatis.MybatisDemoApplication;
+import com.rogchen.www.mybatis.service.MybatisDemoService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ import java.util.Map;
 public class runTest {
     @Autowired
     private TestRestTemplate testRestTemplate;
+    @Autowired
+    private MybatisDemoService mybatisDemoService;
 
     @Test
     public void get() throws Exception {

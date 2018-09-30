@@ -24,7 +24,7 @@ public class MailController {
     //发件人账户名
     public static String senderAccount0 = "chenhk128@163.com";
     //发件人账户密码
-    public static String senderPassword0 = "";
+    public static String senderPassword0 = "tkluo0qc602";
 
     //发件人地址
     public static String senderAddress = "154047387@qq.com";
@@ -33,7 +33,7 @@ public class MailController {
     //发件人账户名
     public static String senderAccount = "154047387@qq.com";
     //发件人账户密码
-    public static String senderPassword = "";
+    public static String senderPassword = "uoqrgofrchmdbide";
 
     public static void main(String[] args) throws Exception {
 
