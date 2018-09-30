@@ -1,4 +1,7 @@
+/target/
 
+
+*.idea
 *.xml
 *.svn-base
 .gitattributes
