@@ -13,6 +13,7 @@ public class LockDemoApplicationTests {
     @Autowired
     private LockService lockService;
 
+
     @Test
     public void contextLoads() {
         lockService.insertName();
