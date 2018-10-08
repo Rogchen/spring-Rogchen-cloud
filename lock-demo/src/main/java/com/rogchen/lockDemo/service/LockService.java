@@ -1,6 +1,6 @@
 package com.rogchen.lockDemo.service;
 
-import com.rogchen.lockDemo.config.LockConfig;
+import com.rogchen.lockDemo.config.AbstractLockConfig;
 import com.rogchen.lockDemo.entity.lockEntity;
 import com.rogchen.lockDemo.entity.lockName;
 import com.rogchen.lockDemo.mapper.LockNameMapper;
@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @Description:
@@ -20,46 +22,65 @@ import java.util.concurrent.CountDownLatch;
  **/
 @Service
 @Slf4j
-public class LockService extends LockConfig {
+public class LockService extends AbstractLockConfig {
     @Autowired
     private LockSetMapper lockSetMapper;
     @Autowired
     private LockNameMapper lockNameMapper;
+    public static int count = 0;    //全局订单Id
 
-    private CountDownLatch latch = null;
+//    private Lock lock = new ReentrantLock();
 
     public void insertName() {
         for (int i = 0; i < 50; i++) {
             new Thread(new Runnable() {
                 public void run() {
                     log.debug("初始化线程" + Thread.currentThread().getName());
-                    handleData();
+//                    handleData();
+                    unLockHandleData();
                 }
             }).start();
         }
     }
 
+    public void unLockHandleData() {
+        lockName lockName = new lockName();
+        lockName.setName(new Date().toLocaleString());
+        lockNameMapper.insert(lockName);
+        try {
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread().getName() + "执行完成！" + ++count);
+    }
 
-    private void handleData() {
-        if (trylock()) {
+    public void handleData() {
+        try {
+            getlock();
+//            Thread.sleep(2000);
             lockName lockName = new lockName();
             lockName.setName(new Date().toLocaleString());
-            lockNameMapper.insert(lockName);
-            //模拟效果
             try {
-                Thread.sleep(300);
+                Thread.sleep(20000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            log.info(Thread.currentThread().getName() + "执行完成！");
-            if (latch != null)
-                latch.countDown();
-        } else {
-            waitlock();
+            int i = ++count;
+            lockNameMapper.insert(lockName);
+            System.out.println(Thread.currentThread().getName() + "执行完成！" + i);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            unlock();
         }
     }
 
-    @Override
+    /**
+     * 非阻塞式锁
+     *
+     * @return
+     */
     public boolean trylock() {
         try {
             lockEntity lockEntity = new lockEntity();
@@ -71,15 +92,15 @@ public class LockService extends LockConfig {
         return true;
     }
 
-    @Override
     public void waitlock() {
-        latch = new CountDownLatch(1);
         try {
-            latch.await();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
+            Thread.sleep(10);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        unlock();
+    }
+
+    public void unlock() {
+        lockSetMapper.deleteByPrimaryKey(1);
     }
 }
