@@ -50,7 +50,7 @@
         <repository>
             <id>public</id>
             <name>Public Repositories</name>
-            <url>http://10.102.2.14:8081/nexus/content/groups/public/</url>
+            <url>http://wwwdemo.msyos.com/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -68,7 +68,7 @@
         <pluginRepository>
             <id>public</id>
             <name>Public Repositories</name>
-            <url>http://10.102.2.14:8081/nexus/content/groups/public/</url>
+            <url>http://wwwdemo.msyos.com/exus/content/groups/public/</url>
         </pluginRepository>
     </pluginRepositories>
     <!--依赖管理，用于管理spring-cloud的依赖，其中Camden.SR3是版本号-->
