@@ -37,18 +37,18 @@ public class MessmageMailController {
     private static List<Map<String, String>> lists() {
         List<Map<String, String>> list = new ArrayList<>();
         Map<String, String> map = new HashMap<>();
-//        map.put("senderAddress", "154047387@qq.com");
-//        map.put("recipientAddress", "837831701@qq.com");
-//        map.put("senderAccount", "154047387@qq.com");
+//        map.put("senderAddress", "######@qq.com");
+//        map.put("recipientAddress", "######@qq.com");
+//        map.put("senderAccount", "######@qq.com");
 //        map.put("host", "smtp.qq.com");
 //        map.put("senderPassword", "#");
 //        list.add(map);
         map = new HashMap<>();
-        map.put("recipientAddress", "837831701@qq.com");
-        map.put("senderAddress", "chenhk128@163.com");
-        map.put("senderAccount", "chenhk128@163.com");
+        map.put("recipientAddress", "######@qq.com");
+        map.put("senderAddress", "######@163.com");
+        map.put("senderAccount", "######@163.com");
         map.put("host", "smtp.163.com");
-        map.put("senderPassword", "#");
+        map.put("senderPassword", "##");
         list.add(map);
         return list;
     }

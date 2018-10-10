@@ -20,18 +20,18 @@ import java.util.Properties;
 public class MailBackupController {
 
     //发件人地址
-    public static String senderAddress0 = "chenhk128@163.com";
+    public static String senderAddress0 = "######@163.com";
     //发件人账户名
-    public static String senderAccount0 = "chenhk128@163.com";
+    public static String senderAccount0 = "######@163.com";
     //发件人账户密码
     public static String senderPassword0 = "";
 
     //发件人地址
-    public static String senderAddress = "154047387@qq.com";
+    public static String senderAddress = "######@qq.com";
     //收件人地址
-    public static String recipientAddress = "837831701@qq.com";
+    public static String recipientAddress = "######@qq.com";
     //发件人账户名
-    public static String senderAccount = "154047387@qq.com";
+    public static String senderAccount = "######@qq.com";
     //发件人账户密码
     public static String senderPassword = "";
 
