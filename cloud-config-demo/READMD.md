@@ -133,7 +133,7 @@ public class TestAuthController {
  #/{application}/{profile}[/{label}]
  #/{application}-{profile}.yml
  #/{label}/{application}-{profile}.yml
- #/{application}-{profile}.properties
+ #/{application}-{profile}.propertiesd
  #/{label}/{application}-{profile}.properties
 ```
 客户端通过制定profile来进行筛选，其实我们前面也通过name属性来进行了。
