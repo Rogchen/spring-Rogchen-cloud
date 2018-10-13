@@ -147,4 +147,6 @@ spring.cloud.config.name=config-test
 * [非springboot项目如何进行统一配置](https://ke.qq.com/webcourse/index.html#cid=131889&term_id=100147308&taid=2289896173732657&vid=h1421882od3)
 
 ## 项目git
-* [github地址:](https://ke.qq.com/webcourse/index.html#cid=131889&term_id=100147308&taid=2289896173732657&vid=h1421882od3)
+
+* [github地址:https://github.com/Rogchen/spring-Rogchen-cloud](https://github.com/Rogchen/spring-Rogchen-cloud)
+> cloud-config cloud-config-demo模块
