@@ -20,20 +20,20 @@ import java.util.Properties;
 public class MailBackupController {
 
     //发件人地址
-    public static String senderAddress0 = "######@163.com";
+    public static String senderAddress0 = "RS12333@mohrss.gov.cn";
     //发件人账户名
-    public static String senderAccount0 = "######@163.com";
+    public static String senderAccount0 = "RS12333@mohrss.gov.cn";
     //发件人账户密码
-    public static String senderPassword0 = "";
+    public static String senderPassword0 = "Mohrss#123456";
 
     //发件人地址
-    public static String senderAddress = "######@qq.com";
+    public static String senderAddress = "chenhk128@163.com";
     //收件人地址
-    public static String recipientAddress = "######@qq.com";
+    public static String recipientAddress = "chenhk128@163.com";
     //发件人账户名
-    public static String senderAccount = "######@qq.com";
+    public static String senderAccount = "RS12333@mohrss.gov.cn";
     //发件人账户密码
-    public static String senderPassword = "";
+    public static String senderPassword = "Mohrss#123456";
 
     public static void main(String[] args) throws Exception {
         Properties props1 = new Properties();

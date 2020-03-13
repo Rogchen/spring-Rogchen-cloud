@@ -1,6 +1,5 @@
 package com.rogchen.lockDemo.config;
 
-import com.rogchen.lockDemo.entity.lockEntity;
 import com.rogchen.lockDemo.mapper.LockSetMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
